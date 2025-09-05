@@ -24,10 +24,4 @@ The program automates the workflow by:
 - **docx** – Create and edit Word documents  
 - **docxtpl** – Simplify document templating by merging data into predefined Word templates  
 
----
-
-## 🚀 Future Updates
-- ✅ Add **DocuSign integration** for digital signatures  
-- ✅ Build a **GUI application** or **web interface** for easier client entry and template management  
-- ✅ Use **AI to generate new templates** for different types of documents  
 
