@@ -1,4 +1,4 @@
-# Client Letters Automation
+# Automated letter generation system
 
 Automate creating letters for clients using Python.
 
