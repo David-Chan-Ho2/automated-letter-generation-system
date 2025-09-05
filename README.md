@@ -18,7 +18,7 @@ The program automates the workflow by:
 ---
 
 ## 🛠️ Libraries Used
-- **csv** – Work with CSV files (used to pull data from Excel and seed the database)  
+- **Pandas** – Work with CSV files (used to pull data from Excel and seed the database)  
 - **sqlite3** – Manage the local database storing client information  
 - **datetime** – Handle date and time formatting in documents  
 - **docx** – Create and edit Word documents  

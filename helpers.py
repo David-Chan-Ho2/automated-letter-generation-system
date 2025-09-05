@@ -1,16 +1,9 @@
-import csv
 from docx import Document
+import pandas as pd
 
 def extract_data_csv(pathfile):
-    data = [] 
-    
-    with open(pathfile, "r") as f:
-        reader = csv.DictReader(f)
-        
-        for row in reader:
-            data.append(row)
-            
-    return data
+    df = pd.read_csv(pathfile)
+    return df.to_dict(orient='records')
 
 def append_docx(src_path, dest_path):
     dest_doc = Document(dest_path)
