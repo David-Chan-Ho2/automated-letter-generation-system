@@ -21,13 +21,11 @@ def main():
         doc = DocxTemplate(docfile)
         data.update(client)
         doc.render(data)
-        input_file_path = f"input{i}.docx"
-        doc.save(input_file_path)
-        append_docx(input_file_path, output_path)
+        input_path = f"input{i}.docx"
+        doc.save(input_path)
+        append_docx(input_path, output_path)
+        os.remove(input_path)
 
-    for i, client in enumerate(clients):
-        os.remove(f"input{i}.docx")
-    
     db.close()
             
 if __name__ == "__main__":

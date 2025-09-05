@@ -5,6 +5,9 @@ def extract_data_csv(pathfile):
     df = pd.read_csv(pathfile)
     return df.to_dict(orient='records')
 
+def dict2tuples(data):
+    return [tuple(v for k, v in d.items() if k != 'id') for d in data]
+
 def append_docx(src_path, dest_path):
     dest_doc = Document(dest_path)
     src_doc = Document(src_path)

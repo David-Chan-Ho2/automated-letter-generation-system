@@ -24,4 +24,3 @@ The program automates the workflow by:
 - **docx** – Create and edit Word documents  
 - **docxtpl** – Simplify document templating by merging data into predefined Word templates  
 
-

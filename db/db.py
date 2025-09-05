@@ -1,5 +1,6 @@
 import sqlite3
 from . import queries
+from helpers import dict2tuples
 
 class DB:
     
@@ -23,7 +24,7 @@ class DB:
         self.conn.commit()
     
     def seed(self, clients):
-        formatted_clients = [tuple(v for k, v in client.items() if k != 'id') for client in clients]
+        formatted_clients = dict2tuples(clients)
         self.add_many(formatted_clients)
         
     def close(self):
