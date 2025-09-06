@@ -23,4 +23,3 @@ The program automates the workflow by:
 - **datetime** – Handle date and time formatting in documents  
 - **docx** – Create and edit Word documents  
 - **docxtpl** – Simplify document templating by merging data into predefined Word templates  
-

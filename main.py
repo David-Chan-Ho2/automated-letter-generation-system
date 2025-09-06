@@ -9,7 +9,7 @@ from data import data
     
 def main():
     csv_file = "files/data.csv"
-    docfile = "files/letter.docx"
+    docfile = "files/template.docx"
     output_path = "files/output.docx"
     
     db = DB(config.DB_NAME)
