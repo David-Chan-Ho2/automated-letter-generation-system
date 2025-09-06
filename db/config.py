@@ -1,1 +1,1 @@
-DB_NAME = 'clients.db'
+DB_NAME = 'db/clients.db'

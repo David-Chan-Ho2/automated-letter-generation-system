@@ -1,9 +1,10 @@
 from docxtpl import DocxTemplate
-import os
+from docx import Document
+import io
 
 from db.db import DB
 from db import config
-from helpers import extract_data_csv, append_docx
+from helpers import extract_data_csv, append_doc
 from data import data
     
 def main():
@@ -16,19 +17,23 @@ def main():
     
     clients = extract_data_csv(csv_file) 
     db.seed(clients)
-        
-    for i, client in enumerate(clients):
+    
+    parent_doc = Document()
+
+    for client in clients:
         doc = DocxTemplate(docfile)
         data.update(client)
         doc.render(data)
-        input_path = f"input{i}.docx"
-        doc.save(input_path)
-        append_docx(input_path, output_path)
-        os.remove(input_path)
+
+        file_stream = io.BytesIO()
+        doc.save(file_stream)
+        file_stream.seek(0)
+
+        append_doc(parent_doc, file_stream.getvalue())
+
+    parent_doc.save(output_path)
 
     db.close()
             
 if __name__ == "__main__":
     main()
-    
-    
